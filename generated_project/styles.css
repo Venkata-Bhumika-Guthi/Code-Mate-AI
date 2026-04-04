@@ -1,0 +1,142 @@
+/* Root variables for colors, fonts, and spacing */
+:root {
+    /* Colors */
+    --color-bg: #f5f5f5;               /* page background */
+    --color-display-bg: #ffffff;       /* display background */
+    --color-display-text: #000000;    /* display text */
+    --color-primary: #4a90e2;          /* generic button */
+    --color-operator: #ff9500;         /* operator buttons */
+    --color-equals: #34c759;           /* equals button */
+    --color-clear: #ff3b30;            /* clear button */
+    --color-backspace: #8e8e93;        /* backspace button */
+    /* Typography */
+    --font-family: 'Arial', sans-serif;
+    --font-size-display: 2rem;
+    --font-size-btn: 1.25rem;
+    /* Layout */
+    --spacing: 0.5rem;
+    --border-radius: 0.4rem;
+}
+
+/* Global page styling */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    font-family: var(--font-family);
+}
+
+/* Calculator container */
+.calculator {
+    max-width: 400px;
+    width: 90vw;
+    background: var(--color-display-bg);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+/* Display area */
+.display {
+    background: var(--color-display-bg);
+    color: var(--color-display-text);
+    font-size: var(--font-size-display);
+    text-align: right;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* Keypad grid */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing);
+}
+
+/* General button styling */
+.btn {
+    width: 100%;
+    padding: var(--spacing);
+    font-size: var(--font-size-btn);
+    font-family: inherit;
+    color: #fff;
+    background: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    box-sizing: border-box;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #357ab8; /* slightly darker than primary */
+    outline: none;
+}
+
+/* Specific button types – both class‑based and data‑action based selectors */
+.operator,
+.btn[data-action="operator"] {
+    background: var(--color-operator);
+}
+.operator:hover,
+.operator:focus,
+.btn[data-action="operator"]:hover,
+.btn[data-action="operator"]:focus {
+    background: #e08900;
+}
+
+.equals,
+.btn[data-action="equals"] {
+    background: var(--color-equals);
+}
+.equals:hover,
+.equals:focus,
+.btn[data-action="equals"]:hover,
+.btn[data-action="equals"]:focus {
+    background: #28a745;
+}
+
+.clear,
+.btn[data-action="clear"] {
+    background: var(--color-clear);
+}
+.clear:hover,
+.clear:focus,
+.btn[data-action="clear"]:hover,
+.btn[data-action="clear"]:focus {
+    background: #d32f2f;
+}
+
+.backspace,
+.btn[data-action="backspace"] {
+    background: var(--color-backspace);
+}
+.backspace:hover,
+.backspace:focus,
+.btn[data-action="backspace"]:hover,
+.btn[data-action="backspace"]:focus {
+    background: #6d6d71;
+}
+
+/* Adjust the zero button to span two columns for better layout */
+button[data-action="digit"][data-value="0"] {
+    grid-column: span 2;
+}
+
+/* Media query for very small screens */
+@media (max-width: 400px) {
+    .btn {
+        font-size: 1rem;
+        padding: calc(var(--spacing) * 0.8);
+    }
+}
