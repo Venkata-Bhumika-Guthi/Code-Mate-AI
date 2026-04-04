@@ -1,35 +1,48 @@
-🚀 Code-Mate-AI
+# 🚀 Code-Mate-AI
 
 Code-Mate-AI is an experimental AI system that generates complete software projects from a single prompt by simulating a structured development workflow.
 
 Instead of acting like a single chatbot, it decomposes the problem and executes it through multiple specialized agents, each responsible for a distinct phase of software development.
 
-🧩 Concept
+---
+
+## 🧩 Concept
 
 Modern software development is not a single-step process — it involves planning, design, and implementation.
 
 This project models that idea using a multi-agent pipeline, where each agent contributes to a different layer of the solution.
 
-⚙️ System Overview
+---
+
+## ⚙️ System Overview
 
 The system is built around a sequential decision flow:
 
-Planning Phase → Interprets user intent and defines scope
-Design Phase → Converts scope into actionable development steps
-Execution Phase → Generates and updates files iteratively
+* **Planning Phase** → Interprets user intent and defines scope
+* **Design Phase** → Converts scope into actionable development steps
+* **Execution Phase** → Generates and updates files iteratively
 
 Each phase passes structured data to the next, enabling controlled and incremental code generation.
 
-🔄 Workflow
+---
+
+## 🔄 Workflow
+
+```text
 User Prompt
    ↓
 Planning → Design → Execution Loop
    ↓
 Project Files Generated
+```
 
 The execution phase continues iteratively until all tasks are completed.
 
-📁 Repository Layout
+---
+
+## 📁 Repository Layout
+
+```text
 Code-Mate-AI/
 │
 ├── agent/
@@ -43,70 +56,129 @@ Code-Mate-AI/
 ├── main.py             # Entry point
 ├── pyproject.toml      # Dependency configuration
 └── README.md
-🛠️ Installation
-1. Clone the repository
+```
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/Code-Mate-AI.git
 cd Code-Mate-AI
-2. Create a virtual environment
+```
+
+---
+
+### 2. Create a virtual environment
+
+```bash
 uv venv
+```
 
 Activate it:
 
-Windows
+**Windows**
 
+```bash
 .venv\Scripts\activate
+```
 
-macOS / Linux
+**macOS / Linux**
 
+```bash
 source .venv/bin/activate
-3. Install dependencies
+```
+
+---
+
+### 3. Install dependencies
+
+```bash
 uv sync
-4. Configure environment variables
+```
 
-Create a .env file in the root directory:
+---
 
+### 4. Configure environment variables
+
+Create a `.env` file in the root directory:
+
+```env
 GROQ_API_KEY=your_api_key_here
-▶️ Running the Project
+```
+
+---
+
+## ▶️ Running the Project
+
+```bash
 python main.py
+```
 
 Provide a natural language instruction when prompted, and the system will begin generating files.
 
-🧪 Sample Inputs
+---
+
+## 🧪 Sample Inputs
 
 You can try prompts such as:
 
-Build a responsive to-do list web app
-Create a basic REST API using FastAPI
-Generate a simple calculator interface with JavaScript
-📦 Output
+* Build a responsive to-do list web app
+* Create a basic REST API using FastAPI
+* Generate a simple calculator interface with JavaScript
+
+---
+
+## 📦 Output
 
 Generated code is written directly into:
 
+```text
 generated_project/
+```
 
 This directory reflects the step-by-step work of the system as it constructs the final solution.
 
-🔧 Technology Stack
-Python
-LangGraph (workflow orchestration)
-LangChain Core utilities
-Groq API for LLM inference
-🚧 Current Constraints
-Large projects may hit token or context limits
-Output quality depends on prompt clarity
-Minimal validation of generated code
-🔮 Possible Enhancements
-Add execution/testing layer for generated code
-Introduce memory for cross-task reasoning
-Improve file dependency awareness
-Build a UI for interactive usage
-📌 Purpose
+---
+
+## 🔧 Technology Stack
+
+* Python
+* LangGraph (workflow orchestration)
+* LangChain Core utilities
+* Groq API for LLM inference
+
+---
+
+## 🚧 Current Constraints
+
+* Large projects may hit token or context limits
+* Output quality depends on prompt clarity
+* Generated code is not automatically tested or validated for correctness
+
+---
+
+## 🔮 Possible Enhancements
+
+* Add execution/testing layer for generated code
+* Introduce memory for cross-task reasoning
+* Improve file dependency awareness
+* Build a UI for interactive usage
+
+---
+
+## 📌 Purpose
 
 This project is intended as a learning and exploration tool for:
 
-Agent-based systems
-LLM-driven automation
-Program synthesis workflows
-⭐ If you find this useful
+* Agent-based systems
+* LLM-driven automation
+* Program synthesis workflows
+
+---
+
+## ⭐ If you find this useful
 
 Consider starring the repository and exploring further improvements.
