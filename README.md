@@ -131,7 +131,7 @@ You can try prompts such as:
 
 ---
 
-## 📦 Output
+## Output
 
 Generated code is written directly into:
 
